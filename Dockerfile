@@ -1,6 +1,4 @@
-
-
-
+FROM coreos:alpha
 
 # TODO: MOUNT SOCKETS
 #  10238    0 srw-------   1 root     root            0 May 15 08:51 /run/systemd/shutdownd
