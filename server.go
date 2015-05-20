@@ -16,6 +16,8 @@ type UnitAction struct {
 var ConfigData = map[string]UnitAction{
 	"ptw/nodename-DELETE": UnitAction{Action: "stop", Unit: "ptw-protonet.service"},
 	"ptw/nodename-PUT":    UnitAction{Action: "restart", Unit: "ptw-protonet.service"},
+	"ptw/nodename-DELETE": UnitAction{Action: "restart", Unit: "dokku-protonet.service"},
+	"ptw/nodename-PUT":    UnitAction{Action: "restart", Unit: "dokku-protonet.service"},
 	"ssh-DELETE":          UnitAction{Action: "restart", Unit: "dokku-protonet.service"},
 	"ssh-PUT":             UnitAction{Action: "restart", Unit: "dokku-protonet.service"},
 }
