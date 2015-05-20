@@ -66,5 +66,5 @@ func main() {
 	}
 	var handler = createHandler(connection)
 	http.HandleFunc("/", handler)
-	http.ListenAndServe(":"+strconv.Itoa(port), nil)
+	http.ListenAndServe(":"+strconv.Itoa(*port), nil)
 }
