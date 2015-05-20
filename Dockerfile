@@ -5,6 +5,6 @@ FROM dockerregistry.protorz.net/ubuntu:latest
 
 COPY sproxy /sproxy
 
-CMD ["/sproxy", "--port", "80"]
+CMD ["/sproxy", "-port", "80"]
 
 EXPOSE 80

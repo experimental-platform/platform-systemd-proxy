@@ -1,9 +1,11 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"github.com/coreos/go-systemd/dbus"
 	"net/http"
+	"strconv"
 )
 
 type UnitAction struct {
@@ -58,10 +60,11 @@ func createHandler(connection *dbus.Conn) func(http.ResponseWriter, *http.Reques
 
 func main() {
 	var connection, err = dbus.New()
+	var port = flag.Int("port", 3001, "server port")
 	if err != nil {
 		panic(err)
 	}
 	var handler = createHandler(connection)
 	http.HandleFunc("/", handler)
-	http.ListenAndServe(":3001", nil)
+	http.ListenAndServe(":"+strconv.Itoa(port), nil)
 }
