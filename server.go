@@ -59,12 +59,15 @@ func createHandler(connection *dbus.Conn) func(http.ResponseWriter, *http.Reques
 }
 
 func main() {
+	var port int
+	flag.IntVar(&port, "port", 3001, "server port")
+	flag.Parse()
+	fmt.Println("Port: ", port)
 	var connection, err = dbus.New()
-	var port = flag.Int("port", 3001, "server port")
 	if err != nil {
 		panic(err)
 	}
 	var handler = createHandler(connection)
 	http.HandleFunc("/", handler)
-	http.ListenAndServe(":"+strconv.Itoa(*port), nil)
+	http.ListenAndServe(":"+strconv.Itoa(port), nil)
 }
