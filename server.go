@@ -22,6 +22,12 @@ var ConfigData = map[string][]UnitAction{
 		UnitAction{Action: "restart", Unit: "ptw-protonet.service"},
 		UnitAction{Action: "restart", Unit: "dokku-protonet.service"},
 	},
+	"ptw/enabled-DELETE": []UnitAction{
+		UnitAction{Action: "stop", Unit: "ptw-protonet.service"},
+	},
+	"ptw/enabled-PUT": []UnitAction{
+		UnitAction{Action: "restart", Unit: "ptw-protonet.service"},
+	},
 	"ssh-DELETE": []UnitAction{
 		UnitAction{Action: "restart", Unit: "dokku-protonet.service"},
 	},
