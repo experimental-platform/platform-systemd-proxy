@@ -1,0 +1,36 @@
+From c6a3034bf0f22c1bff84f9ab7ac998456deb728b Mon Sep 17 00:00:00 2001
+From: Joe Gregorio <jcgregorio@google.com>
+Date: Wed, 29 Jul 2015 13:35:42 -0400
+Subject: [PATCH] Fix breakage from godbus changing *dbus.Object to
+ dbus.BusObject interface.
+
+---
+ dbus/dbus.go | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/dbus/dbus.go b/dbus/dbus.go
+index a7e72c2..5dd748e 100644
+--- a/dbus/dbus.go
++++ b/dbus/dbus.go
+@@ -64,11 +64,11 @@ func PathBusEscape(path string) string {
+ type Conn struct {
+ 	// sysconn/sysobj are only used to call dbus methods
+ 	sysconn *dbus.Conn
+-	sysobj  *dbus.Object
++	sysobj  dbus.BusObject
+ 
+ 	// sigconn/sigobj are only used to receive dbus signals
+ 	sigconn *dbus.Conn
+-	sigobj  *dbus.Object
++	sigobj  dbus.BusObject
+ 
+ 	jobListener struct {
+ 		jobs map[dbus.ObjectPath]chan<- string
+@@ -182,6 +182,6 @@ func dbusAuthHelloConnection(createBus func() (*dbus.Conn, error)) (*dbus.Conn,
+ 	return conn, nil
+ }
+ 
+-func systemdObject(conn *dbus.Conn) *dbus.Object {
++func systemdObject(conn *dbus.Conn) dbus.BusObject {
+ 	return conn.Object("org.freedesktop.systemd1", dbus.ObjectPath("/org/freedesktop/systemd1"))
+ }
