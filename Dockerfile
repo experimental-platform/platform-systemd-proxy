@@ -1,4 +1,4 @@
-FROM experimentalplatform/ubuntu:latest
+FROM scratch
 
 # TODO: GO http://godoc.org/github.com/coreos/go-systemd/dbus#Conn.ReloadOrRestartUnit
 
