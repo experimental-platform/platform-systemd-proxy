@@ -2,5 +2,6 @@
 set -e
 
 SRC_PATH=$(pwd)
+PROJECT_NAME="github.com/experimental-platform/platform-systemd-proxy"
 
-docker run --volume=${SRC_PATH}:/usr/src/sproxy --workdir=/usr/src/sproxy golang:1.4 /usr/src/sproxy/patch_dbus.sh
+docker run -v "${SRC_PATH}:/go/src/$PROJECT_NAME" -w "/go/src/$PROJECT_NAME" -e GO15VENDOREXPERIMENT=1 golang:1.5 /bin/bash -c "./install-glide.sh && glide up && go build -v"

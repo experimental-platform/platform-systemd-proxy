@@ -1,0 +1,6 @@
+package: main
+import:
+  - package: github.com/coreos/go-systemd
+    ref: 1f2251651d199b698a0be8c8bf2283178a2a97ed
+  - package: github.com/godbus/dbus
+    ref: 9bb9dbf0e53309fa81d26e7230cbb6cff9373cad
