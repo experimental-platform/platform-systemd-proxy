@@ -5,6 +5,6 @@ env:
 services:
   - docker
 install:
-  - curl -L https://raw.githubusercontent.com/experimental-platform/build-scripts/master/go-build.sh | sh
+  - curl -L https://raw.githubusercontent.com/experimental-platform/build-scripts/master/go-build.sh | bash
 script:
-  - curl -L https://raw.githubusercontent.com/experimental-platform/build-scripts/master/buildimg.sh | sh
+  - curl -L https://raw.githubusercontent.com/experimental-platform/build-scripts/master/buildimg.sh | bash
