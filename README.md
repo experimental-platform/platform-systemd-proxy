@@ -9,12 +9,12 @@ This is a component of the experimental platform. To read more about it please g
 
 ## Branch: Development
 
-[![Circle CI](https://circleci.com/gh/experimental-platform/platform-systemd-proxy.svg?style=svg&circle-token=d684cdf04dfe76654ac784ecdb150b27135a16e2)](https://circleci.com/gh/experimental-platform/platform-systemd-proxy)
+[![Build Status](https://travis-ci.org/experimental-platform/platform-systemd-proxy.svg?branch=development)](https://travis-ci.org/experimental-platform/platform-systemd-proxy)
 
 All development branches stem from and (re-)integrate here.
 
 ## Branch: Master
 
-[![Circle CI](https://circleci.com/gh/experimental-platform/platform-systemd-proxy/tree/master.svg?style=svg&circle-token=d684cdf04dfe76654ac784ecdb150b27135a16e2)](https://circleci.com/gh/experimental-platform/platform-systemd-proxy/tree/master)
+[![Build Status](https://travis-ci.org/experimental-platform/platform-systemd-proxy.svg?branch=master)](https://travis-ci.org/experimental-platform/platform-systemd-proxy)
 
 This is the base for &alpha;-channel releases.
