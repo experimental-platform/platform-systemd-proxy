@@ -5,6 +5,6 @@ FROM experimentalplatform/ubuntu:latest
 
 COPY platform-systemd-proxy /sproxy
 
-CMD ["/sproxy", "-port", "80"]
+CMD ["dumb-init", "/sproxy", "-port", "80"]
 
 EXPOSE 80
