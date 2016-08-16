@@ -1,0 +1,10 @@
+hash: dee8607652aa252e2d8c02f75461eed374e9891eaaa93b945452b829e4344fa3
+updated: 2016-08-16T15:34:12.072938436+02:00
+imports:
+- name: github.com/coreos/go-systemd
+  version: 1f2251651d199b698a0be8c8bf2283178a2a97ed
+  subpackages:
+  - dbus
+- name: github.com/godbus/dbus
+  version: 9bb9dbf0e53309fa81d26e7230cbb6cff9373cad
+testImports: []
